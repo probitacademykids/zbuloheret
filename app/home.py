@@ -48,11 +48,11 @@ ROOT = Path(__file__).resolve().parent           # app/
 MODELS_DIR = ROOT.parent / "models"              # models/
 
 st.title("🎀 Zbulimi i Hershëm i Kancerit të Gjirit — Vlerësime me Inteligjencë Artificiale")
-st.caption("Demonstrim edukativ — jo mjet diagnostik.")
+st.caption("Ky është një demonstrim edukativ — nuk është një mjet diagnostikues.")
 
 # Tabs
 tab_general, tab_wdbc, tab_busi = st.tabs([
-    "👥 Testim i hershëm",
+    "Vetëvlerësim fillestar",
     "🧮 Modeli i të Dhënave Klinike",
     "🩻 Analiza me Ultratinguj",
 ])
@@ -85,22 +85,22 @@ with tab_wdbc:
         <div class="dataset-info">
         <h4>📊 Wisconsin Diagnostic Breast Cancer Dataset</h4>
         <p><strong>Burimi:</strong> Universiteti i Wisconsin-Madison</p>
-        <p><strong>Përshkrim:</strong> Ky dataset përmban 30 veçori numerike të nxjerra nga imazhet digitale të biopsive të gjirit.</p>
+        <p><strong>Përshkrim:</strong> Ky dataset përmban 30 veçori numerike të nxjerra nga imazhet digjitale të biopsive të gjirit, të cilat përdoren për analizën e karakteristikave të qelizave tumorale.</p>
         <p><strong>Madhësia:</strong> 569 mostra (357 beninj, 212 malinj)</p>
         <p><strong>Veçoritë kryesore:</strong> 
         <ul>
-            <li>Radius (rreze) - mesatare e distancave nga qendra në pika në periferi</li>
-            <li>Texture (teksturë) - devijimi standard i vlerave të shkallës së gri</li>
-            <li>Perimeter (perimetër) - gjatësia e kufirit të tumorit</li>
-            <li>Area (sipërfaqe) - zona brenda kufirit</li>
-            <li>Smoothness (lëmuarësi) - ndryshimet lokale në gjatësi të rrezeve</li>
+            <li>Radius (Rreze) - Mesatarja e distancave nga qendra e tumorit deri në pikat e periferisë.</li>
+            <li>Texture (teksturë) - Devijimi standard i vlerave të shkallës së gri, që përshkruan ndryshueshmërinë e sipërfaqes.</li>
+            <li>Perimeter (perimetër) - Gjatesia e kufirit të tumorit.</li>
+            <li>Area (sipërfaqe) - Zona e brendshme e tumorit.t</li>
+            <li>Smoothness (lëmuarësi) - Ndryshimet lokale në gjatësi të rrezeve, që tregon rrafshimin e sipërfaqes.</li>
         </ul>
         </p>
-        <p><strong>Qëllimi:</strong> Ndifarimi midis tumoreve beninj dhe malinj bazuar në karakteristikat celulare.</p>
+        <p><strong>Qëllimi:</strong> Diferencimi midis tumoreve beninj dhe malinj duke u bazuar në karakteristikat qelizore të tumorit.</p>
         </div>
         """, unsafe_allow_html=True)
     
-    st.write("Fushat mbeten në anglisht; **Normal** tregon vlera tipike të dataset-it (jo pragje klinike).")
+    st.write("Fushat mbeten në anglisht; ‘Normal’ tregon vlerat tipike të dataset-it dhe nuk përfaqëson pragje klinike.")
 
     # Load model quietly
     try:
@@ -251,12 +251,17 @@ with tab_wdbc:
             # Këshilla të përgjithshme për të gjitha rastet
             st.markdown("---")
             st.info("""
-            **ℹ️ Informacion i rëndësishëm:**
-            - Ky model analizon **veçori numerike** nga imazhet e biopsive
-            - Rezultatet bazohen në **statistikë** dhe **mund të kenë gabime**
-            - **Vetëm një patolog** mund të japë diagnozë definitive përmes biopsisë
-            - Të dhënat janë nga **dataset akademik** dhe **nuk zëvendësojnë konsultimin mjekësor**
-            - Gjithmonë ndiqni këshillat e specialistit tuaj shëndetësor
+            **ℹ️ Paralajmërim / Disclaimer**
+            Ky projekt është zhvilluar nga nxënës të Probit Academy si një 
+            demonstrim arsimor i përdorimit të Inteligjencës Artificiale në 
+            mjekësi, duke përdorur të dhëna nga Wisconsin Diagnostic Breast 
+            Cancer Dataset. Qëllimi është të ilustrojë se si AI mund të ndihmojë 
+            në analizimin e faktorëve të rrezikut për kancer të gjirit.
+                    
+            Ky projekt nuk ofron diagnozë mjekësore. Të dhënat dhe rezultatet e 
+            gjeneruara nuk duhet të përdoren për vendimmarrje shëndetësore. 
+            Përdoruesit duhet të konsultohen gjithmonë me një mjek ose specialist
+            për çdo shqetësim shëndetësor.
             """)
 
             # Save to state for reports
@@ -438,22 +443,22 @@ with tab_general:
         <div class="dataset-info">
         <h4>👥 Breast Cancer Surveillance Consortium (BCSC) Dataset</h4>
         <p><strong>Burimi:</strong> Breast Cancer Surveillance Consortium - rrjet amerikan i regjistrave të mamografisë</p>
-        <p><strong>Përshkrim:</strong> Ky dataset përmban të dhëna nga miliona screeningje të mamografisë dhe faktorët e rrezikut të shoqëruar.</p>
+        <p><strong>Përshkrim:</strong> Ky dataset përmban të dhëna nga miliona ekzaminime mamografike të kryera në qendra të ndryshme shëndetësore në SHBA, së bashku me informacion mbi faktorët që ndikojnë në rrezikun për kancer të gjirit. Të dhënat përdoren për trajnim të modeleve të inteligjencës artificiale në parashikimin e rrezikut.</p>
         <p><strong>Madhësia:</strong> Miliona regjistrime nga qendra të ndryshme shëndetësore në SHBA</p>
         <p><strong>Faktorët kryesorë të rrezikut:</strong></p>
         <ul>
-            <li><strong>Mosha:</strong> Rreziku rritet me moshën</li>
-            <li><strong>Historia familjare:</strong> Nëna, motra ose vajza me kancer të gjirit</li>
-            <li><strong>Dendësia e gjirit:</strong> Gjiri më i dendur = rrezik më i lartë</li>
+            <li><strong>Mosha:</strong> Rreziku rritet me kalimin e moshës.</li>
+            <li><strong>Historia familjare:</strong> Kancer i gjirit tek nëna, motra ose vajza.</li>
+            <li><strong>Dendësia e gjirit:</strong> Gjiri më i dendur lidhet me rrezik më të lartë.</li>
             <li><strong>Historia personale:</strong> Biopsi të mëparshme të gjirit</li>
-            <li><strong>Faktorë hormonalë:</strong> Mosha e menstruacioneve, menopauza, terapia hormonale</li>
-            <li><strong>Faktorë të stilit të jetesës:</strong> BMI, ushqim, aktivitet fizik</li>
+            <li><strong>Faktorë hormonalë:</strong> Mosha e fillimit të menstruacioneve, menopauza, përdorimi i terapisë hormonale.</li>
+            <li><strong>Faktorë të stilit të jetesës:</strong> Indeksi i masës trupore (BMI), ushqimi, aktiviteti fizik.</li>
         </ul>
-        <p><strong>Qëllimi:</strong> Parashikimi i rrezikut 5-vjeçar për zhvillimin e kancerit të gjirit bazuar në faktorët klinikë dhe të stilit të jetesës.</p>
+        <p><strong>Qëllimi:</strong> Trajnimi i modeleve të inteligjencës artificiale për të parashikuar rrezikun pesëvjeçar të kancerit të gjirit, duke përdorur kombinimin e të dhënave klinike dhe të stilit të jetesës.</p>
         </div>
         """, unsafe_allow_html=True)
     
-    st.write("Ky model përdor faktorë të rrezikut si mosha, historia familjare dhe stilin e jetës për të vlerësuar rrezikun e kancerit të gjirit.")
+    st.write("Ky model analizon faktorë të rrezikut, përfshirë moshën, historinë familjare dhe stilin e jetës, për të parashikuar rrezikun e zhvillimit të kancerit të gjirit.")
 
     # Info to include in the report
     colA, colB = st.columns(2)
