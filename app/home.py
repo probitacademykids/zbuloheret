@@ -252,6 +252,7 @@ with tab_wdbc:
             st.markdown("---")
             st.info("""
             **ℹ️ Paralajmërim / Disclaimer**
+                    
             Ky projekt është zhvilluar nga nxënës të Probit Academy si një 
             demonstrim arsimor i përdorimit të Inteligjencës Artificiale në 
             mjekësi, duke përdorur të dhëna nga Wisconsin Diagnostic Breast 
