@@ -47,7 +47,7 @@ st.markdown("""
 ROOT = Path(__file__).resolve().parent           # app/
 MODELS_DIR = ROOT.parent / "models"              # models/
 
-st.title("🎀 Zbulo Heret AI — Parashikime me AI")
+st.title("🎀 Zbulimi i Hershëm i Kancerit të Gjirit — Vlerësime me Inteligjencë Artificiale")
 st.caption("Demonstrim edukativ — jo mjet diagnostik.")
 
 # Tabs
