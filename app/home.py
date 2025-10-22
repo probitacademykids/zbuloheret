@@ -291,17 +291,17 @@ with tab_busi:
         st.markdown("""
         <div class="dataset-info">
         <h4>🩻 Breast Ultrasound Images Dataset (BUSI)</h4>
-        <p><strong>Burimi:</strong> Universiteti i Banha në Bashkimin Egjiptian</p>
-        <p><strong>Përshkrim:</strong> Ky dataset përmban imazhe me ultratinguj të gjirit të grumbulluara nga 600 grave.</p>
-        <p><strong>Madhësia:</strong> 780 imazhe të organizuara në 3 kategori:</p>
+        <p><strong>Burimi:</strong> Universiteti i Banha, Bashkimi Egjiptian</p>
+        <p><strong>Përshkrim:</strong> Ky dataset përmban imazhe me ultratinguj të gjirit, të grumbulluara nga 600 gra, dhe përdoret për analizën dhe klasifikimin automatik të masave të gjirit.</p>
+        <p><strong>Madhësia:</strong> 780 imazhe, të ndara në 3 kategori:</p>
         <ul>
-            <li><strong>Normal:</strong> 133 imazhe - gjiri pa asnjë masë të dukshme</li>
-            <li><strong>Beninj:</strong> 437 imazhe - masa jo-kancerogjene</li>
-            <li><strong>Malinj:</strong> 210 imazhe - masa kancerogjene</li>
+            <li><strong>Normal:</strong> 133 imazhe – gjiri pa masa të dukshme</li>
+            <li><strong>Beninj:</strong> 437 imazhe – masa jo-kancerogjene</li>
+            <li><strong>Malinj:</strong> 210 imazhe – masa kancerogjene</li>
         </ul>
         <p><strong>Karakteristikat:</strong> 
         <ul>
-            <li>Të gjitha imazhet janë në shkallë gri</li>
+            <li>Të gjitha imazhet në shkallë gri</li>
             <li>Përmbajnë shënime për masat e zbuluara</li>
             <li>Përdoren për klasifikim automatik të sëmundjeve të gjirit</li>
         </ul>
@@ -420,11 +420,11 @@ with tab_busi:
             # Këshilla të përgjithshme për të gjitha rastet
             st.markdown("---")
             st.info("""
-            **ℹ️ Kujdes i rëndësishëm:**
-            - Ky është një **model edukativ AI** dhe **NUK zëvendëson vlerësimin mjekësor**
-            - Rezultatet janë të bazuara në analizën e imazhit dhe mund të kenë gabime
-            - **Vetëm një mjek i certifikuar** mund të japë një diagnozë të saktë
-            - Gjithmonë ndiqni këshillat e specialistit tuaj shëndetësor
+            **Paralajmërim / Disclaimer**
+            
+            Ky projekt është zhvilluar nga nxënës të Probit Academy si një demonstrim arsimor i përdorimit të Inteligjencës Artificiale në mjekësi, duke përdorur të dhëna nga Breast Ultrasound Images Dataset (BUSI). Qëllimi është të ilustrojë se si AI mund të ndihmojë në analizimin e faktorëve të rrezikut për kancer të gjirit.
+                    
+            Ky projekt nuk ofron diagnozë mjekësore. Të dhënat dhe rezultatet e gjeneruara nuk duhet të përdoren për vendimmarrje shëndetësore. Përdoruesit duhet të konsultohen gjithmonë me një mjek ose specialist për çdo shqetësim shëndetësor.
             """)
 
             # store for report
@@ -755,5 +755,7 @@ with tab_general:
                     mime="application/pdf"
                 )
                 st.success("Raporti u gjenerua.")
+            
     except Exception as e:
         st.error(f"Modeli BCSC General nuk u gjet ose s'mund të ngarkohet: {e}")
+
