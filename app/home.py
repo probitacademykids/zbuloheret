@@ -253,7 +253,7 @@ with tab_wdbc:
             st.info("""
             **ℹ️ Paralajmërim / Disclaimer**
                     
-            Ky projekt është zhvilluar nga nxënës të Probit Academy si një 
+            Ky projekt është zhvilluar nga stafi i  Probit Academy si një 
             demonstrim arsimor i përdorimit të Inteligjencës Artificiale në 
             mjekësi, duke përdorur të dhëna nga Wisconsin Diagnostic Breast 
             Cancer Dataset. Qëllimi është të ilustrojë se si AI mund të ndihmojë 
